@@ -58,7 +58,7 @@ def create_counters(name):
     app.logger.info("Request to Create counter: %s...", name)
 
     if name in COUNTER:
-        output_string=f"Counter {name} already exists"
+        output_string = f"Counter {name} already exists"
         return abort(status.HTTP_409_CONFLICT, output_string)
 
     COUNTER[name] = 0
@@ -80,7 +80,7 @@ def read_counters(name):
     app.logger.info("Request to Read counter: %s...", name)
 
     if name not in COUNTER:
-        output_string=f"Counter {name} does not exist"
+        output_string = f"Counter {name} does not exist"
         return abort(status.HTTP_404_NOT_FOUND, output_string)
 
     counter = COUNTER[name]
@@ -96,7 +96,8 @@ def update_counters(name):
     app.logger.info("Request to Update counter: %s...", name)
 
     if name not in COUNTER:
-        return abort(status.HTTP_404_NOT_FOUND, f"Counter {name} does not exist")
+        output_string = f"Counter {name} does not exist"
+        return abort(status.HTTP_404_NOT_FOUND, output_string)
 
     COUNTER[name] += 1
 
