@@ -43,7 +43,7 @@ def list_counters():
     counters = []
     for count in COUNTER.items():
         counters.append(dict(name=count[0], counter=count[1]))
-    # counters = [dict(name=count[0], counter=count[1]) 
+    # counters = [dict(name=count[0], counter=count[1])
     # for count in COUNTER.items()]
 
     return jsonify(counters)
